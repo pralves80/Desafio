@@ -1,0 +1,43 @@
+﻿@model Desafio.Models.Filme
+
+@{
+    ViewData["Title"] = "Detalhe";
+}
+
+<h1>Detalhe</h1>
+
+<h4>Filme</h4>
+<hr />
+
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th width=300 height=150>
+                    <img src=@Html.DisplayFor(model => model.poster_path) width=300 height=150>
+                </th>
+                
+                <th>
+                    <h1>@Html.DisplayFor(model => model.title)</h1>
+                    <h3>@Html.DisplayFor(model => model.release_date)</h3>
+                </th>
+            
+            </tr>
+        </thead>
+    </table>
+
+    <hr />
+
+    <div>
+       <h3>@Html.DisplayFor(model => model.overview)</h3>   
+    </div>
+
+    
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
